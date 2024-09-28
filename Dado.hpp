@@ -31,9 +31,6 @@ public:
     int roll()
     {
         int result = dist(rng);
-        std::cout << "Dado rolled a " << result << "!" << std::endl;
-        
-        // Update the sprite based on the rolled number
         updateSprite(result);
         
         return result;
