@@ -50,9 +50,13 @@ void FaseStickman::init()
 
     // Add enemies to the objs list
     inimigos.push_back(inimigo1);
-    inimigos.push_back(inimigo2);
-    inimigos.push_back(inimigo3);
+    objs.push_back(inimigo1);
 
+    inimigos.push_back(inimigo2);
+    objs.push_back(inimigo2);
+
+    inimigos.push_back(inimigo3);
+    objs.push_back(inimigo3);
 }
 
 // Collision Detection Method: Checks collision with the left and right boundaries
