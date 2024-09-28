@@ -13,7 +13,7 @@ public:
     virtual ~Wizard() {}
 
     virtual void ondeath() override {
-        std::cout << "The mighty " << getName() << " has fallen. You have won the game!" << std::endl;
+        std::cout << getName() << " foi derrotado! VocÊ venceu o jogo!" << std::endl;
     }
 };
 

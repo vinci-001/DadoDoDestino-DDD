@@ -18,7 +18,7 @@ public:
     }
 
     virtual void ondeath() {
-        std::cout << getName() << " has died." << std::endl;
+        std::cout << getName() << " foi derrotado." << std::endl;
     }
 
 };
