@@ -47,6 +47,11 @@ public:
     void ativarObj() {this->active = true;};
     void desativarObj() {this->active = false;};
 
+    bool isActive() 
+    {
+        return this->active;
+    }
+
     void setSprite(SpriteBase* sprite) {
         if (pSprite != nullptr) {
             delete pSprite;  // Libera o sprite atual
@@ -60,7 +65,7 @@ public:
     
     virtual void draw(SpriteBase &screen, unsigned x, unsigned y) {if (active) pSprite->draw(screen,x,y);}
 
-private:
+protected:
     std::string name;
     unsigned posL, posC;
     SpriteBase *pSprite;

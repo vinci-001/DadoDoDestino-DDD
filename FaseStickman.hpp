@@ -7,6 +7,7 @@
 #include "ASCII_Engine/SpriteBuffer.hpp"
 #include "ASCII_Engine/ObjetoDeJogo.hpp"
 #include "Inimigo.hpp"
+#include "Wizard.hpp"
 #include "Stick.hpp"
 #include "Dado.hpp"
 #include <string>
@@ -14,26 +15,26 @@
 class FaseStickman : public Fase
 {
 public:
-    // Constructor that accepts a name and background sprite
     FaseStickman(std::string name, const Sprite &bkg)
         : Fase(name, bkg), dado(nullptr), stickman(nullptr) {}
     
-    // Destructor declared but not defined inline to avoid redefinition
     virtual ~FaseStickman();
     
     virtual void init();
     virtual unsigned run(SpriteBuffer &screen);
 
-private:
-    ObjetoDeJogo* stickman;    // Pointer to Stickman
-    Dado* dado;                 // Pointer to the Dado
-    Inimigo* inimigo1;         // Pointer to Inimigo 1
-    Inimigo* inimigo2;         // Pointer to Inimigo 2
-    Inimigo* inimigo3;         // Pointer to Inimigo 3
+     bool areEnemiesAlive() const;
 
-    std::list<Inimigo*> inimigos; // Separate list to store all enemy objects
-    // Collision Detection
-    bool colideComParede() const; // Collision detection with boundaries
+private:
+    ObjetoDeJogo* stickman;   
+    Dado* dado;              
+    Inimigo* inimigo1;      
+    Inimigo* inimigo2;     
+    Inimigo* inimigo3;      
+    Wizard* wizard;      
+
+    std::list<Inimigo*> inimigos;
+    bool colideComParede() const;
 };
 
 #endif // FASESTICKMAN_HPP
